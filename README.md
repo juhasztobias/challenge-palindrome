@@ -40,23 +40,30 @@ Luego ve al proyecto:
 ### 2. Instalar las dependencias y ejecutar backend
 Para instalar las dependencias del backend, navega a la carpeta back:
   -  cd back
+    
 Luego ejecuta:
   - npm install
+    
 De ser necesario recuerda instalar cors
-  - npm install cors 
+  - npm install cors
+    
 Para correr el backend, ejecuta:
   - node src/index.js
 El servidor backend se ejecutará en el puerto 8000 de manera predeterminada.
 
 ### 3. Instalar las dependencias y ejecutar frontend
-Para instalar las dependencias del frontend, navega a la carpeta front:
+Para instalar las dependencias del frontend, abre una nueva terminal y navega a la carpeta front:
   -  cd front
 En caso de encontrarte en la carpeta back puede ejecutar:
   -  cd ../front
+    
 Luego ejecuta:
   - npm install
+    
 Recuerda instalar axios
-  - npm install axios 
+
+  - npm install axios
+    
 Para correr el frontend, ejecuta:
   - npm run dev
 
