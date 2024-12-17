@@ -6,7 +6,9 @@ import { sanitizeWord } from './utilities/sanitize-words.js';
 dotenv.config();
 
 export const app = express();
-app.use(cors());
+app.use(cors({
+
+}));
 app.use(json());
 
 /**
@@ -30,11 +32,11 @@ app.post('/palindrome', (req, res) => {
 
   // Con .split convertimos el string en un array para hacer uso del método .reverse()
   // Este metodo reverse, devuelve el array invertido y por último volvemos a convertir el array en un string
-  const reverseWord = sanitizedWord.split("").reverse().join("");
-
+  const reverseWord = sanitizedWord.split("").reverse().join("").toUpperCase();
+  
   return res.json({
     word,
     // Devuelve true si el string sanitizado es igual al string reversado, es decir, la palabra es polindromo
-    isPolindrome: reverseWord === sanitizedWord
+    isPalindrome: reverseWord === sanitizedWord
   })
 })
