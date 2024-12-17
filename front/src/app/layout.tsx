@@ -1,17 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Challenge Palindrome",
@@ -26,10 +14,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={"bg-gray-50 text-gray-900"}
       >
-        {children}
+        <header className="bg-blue-500 p-4 shadow-md">
+          <h1 className="text-2xl text-white font-bold text-center">
+            Challenge: Verificador de Palíndromos
+          </h1>
+        </header>
+
+        <main className="flex flex-col min-h-screen p-6 flex-grow">
+          <div className="max-w-3xl mx-auto w-full">{children}</div>
+        </main>
+
+        <footer className="bg-blue-500 p-4 mt-auto">
+          <p className="text-white text-center">
+            Desarrollado por Leonardo Sebastian
+          </p>
+        </footer>
       </body>
     </html>
   );
 }
+
+
