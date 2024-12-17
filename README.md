@@ -1,6 +1,6 @@
 # Palindrome Checker Challenge
 
-## Objetivo del Challenge
+## 📄Objetivo del Challenge
 
 Desarrollar una aplicación full-stack que permita verificar si una palabra o frase es un palíndromo, y almacenar un historial de las entradas.
 
@@ -17,13 +17,7 @@ Desarrollar una aplicación full-stack que permita verificar si una palabra o fr
 - Desarrollar una interfaz de usuario con Next.js que permita a los usuarios ingresar palabras o frases, enviar la solicitud al endpoint y mostrar si es un palíndromo.
 - Mostrar el historial de palabras o frases enviadas al backend en la misma interfaz.
 
-## Descripción
-
-El sistema consta de dos partes principales:
-- **Frontend**: Una aplicación web desarrollada con Next.js, donde el usuario puede ingresar texto para verificar si es un palíndromo.
-- **Backend**: Una API construida con Node.js y Express, que valida si una palabra o frase es un palíndromo y mantiene un historial de las verificaciones.
-
-### Requisitos previos
+### 🛠️ Requisitos previos
 
 Antes de comenzar, asegúrate de tener instalados los siguientes programas en tu máquina:
 
@@ -37,7 +31,7 @@ Primero, debes clonar el repositorio en tu máquina local. Abre una terminal y e
 Luego ve al proyecto:
 - cd challenge-palindrome
 
-### 2. Instalar las dependencias y ejecutar backend
+### 🚀 2. Instalar las dependencias y ejecutar backend
 Para instalar las dependencias del backend, navega a la carpeta back:
   -  cd back
     
@@ -51,7 +45,7 @@ Para correr el backend, ejecuta:
   - node src/index.js
 El servidor backend se ejecutará en el puerto 8000 de manera predeterminada.
 
-### 3. Instalar las dependencias y ejecutar frontend
+### 🚀 3. Instalar las dependencias y ejecutar frontend
 Para instalar las dependencias del frontend, abre una nueva terminal y navega a la carpeta front:
   -  cd front
 En caso de encontrarte en la carpeta back puede ejecutar:
@@ -66,4 +60,7 @@ Recuerda instalar axios
     
 Para correr el frontend, ejecuta:
   - npm run dev
+
+### Ya estas en condiciones de probar el challenge
+
 
