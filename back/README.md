@@ -45,13 +45,6 @@ node src/index.js
 - **Método**: `GET`
 - **Descripción**: Devuelve el historial de todas las palabras o frases verificadas hasta el momento.
 
-#### Entrada (Body):
-```json
-{
-  "text": "La ruta natural"
-}
-```
-
 #### Salida :
 ```json
 [
