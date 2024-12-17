@@ -17,9 +17,11 @@ Desarrollar una aplicación full-stack que permita verificar si una palabra o fr
 - Desarrollar una interfaz de usuario con Next.js que permita a los usuarios ingresar palabras o frases, enviar la solicitud al endpoint y mostrar si es un palíndromo.
 - Mostrar el historial de palabras o frases enviadas al backend en la misma interfaz.
 
+##  Instrucciones para ejecutar la aplicación.
+
 ### 🛠️ Requisitos previos
 
-Antes de comenzar, asegúrate de tener instalados los siguientes programas en tu máquina:
+Antes de comenzar, asegúrate de tener instalados los siguientes programas:
 
 - **Node.js**: La aplicación está construida con Node.js, por lo que necesitas tenerlo instalado. Puedes descargarlo e instalarlo desde [aquí](https://nodejs.org/).
 - **npm** (Node Package Manager): npm se instala automáticamente con Node.js. Lo necesitarás para gestionar las dependencias del proyecto.
