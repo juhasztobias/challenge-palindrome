@@ -4,10 +4,6 @@
 
 Desarrollar una aplicación full-stack que permita verificar si una palabra o frase es un palíndromo, y almacenar un historial de las entradas.
 
-## Cómo realizar el Challenge
-
-Para realizar el challenge, puedes hacer un fork del repositorio que te dejamos a disposición o crear tu propio repositorio desde cero.
-
 ## Requisitos
 
 ### Backend
@@ -21,27 +17,46 @@ Para realizar el challenge, puedes hacer un fork del repositorio que te dejamos 
 - Desarrollar una interfaz de usuario con Next.js que permita a los usuarios ingresar palabras o frases, enviar la solicitud al endpoint y mostrar si es un palíndromo.
 - Mostrar el historial de palabras o frases enviadas al backend en la misma interfaz.
 
-## Ejemplos
+## Descripción
 
-### Palabras y/o frases palíndromos:
+El sistema consta de dos partes principales:
+- **Frontend**: Una aplicación web desarrollada con Next.js, donde el usuario puede ingresar texto para verificar si es un palíndromo.
+- **Backend**: Una API construida con Node.js y Express, que valida si una palabra o frase es un palíndromo y mantiene un historial de las verificaciones.
 
-- Anana
-- Radar
-- Somos
-- La ruta natural
-- A mamá Roma le aviva el amor a papá y a papá Roma le aviva el amor a mamá
+### Requisitos previos
 
-### Palabras y/o frases que no lo son:
+Antes de comenzar, asegúrate de tener instalados los siguientes programas en tu máquina:
 
-- Casa
-- Perro
-- Camino
-- Buenos días
-- Hola mundo
-- COBOL es un lenguaje de programación
+- **Node.js**: La aplicación está construida con Node.js, por lo que necesitas tenerlo instalado. Puedes descargarlo e instalarlo desde [aquí](https://nodejs.org/).
+- **npm** (Node Package Manager): npm se instala automáticamente con Node.js. Lo necesitarás para gestionar las dependencias del proyecto.
 
-## Entregables
+### 1. Clonar el repositorio
 
-- Código del backend y frontend, documentado y con instrucciones claras sobre cómo ejecutar la aplicación.
-- El código del backend y del frontend deberá estar en un repositorio de GitHub de manera pública.
-- Una vez finalizado, en el email del entregable deberás incluir el link al repositorio de GitHub junto al hash del commit.
+Primero, debes clonar el repositorio en tu máquina local. Abre una terminal y ejecuta:
+- git clone https://github.com/LeoSebastian23/challenge-palindrome.git
+Luego ve al proyecto:
+- cd challenge-palindrome
+
+### 2. Instalar las dependencias y ejecutar backend
+Para instalar las dependencias del backend, navega a la carpeta back:
+  -  cd back
+Luego ejecuta:
+  - npm install
+De ser necesario recuerda instalar cors
+  - npm install cors 
+Para correr el backend, ejecuta:
+  - node src/index.js
+El servidor backend se ejecutará en el puerto 8000 de manera predeterminada.
+
+### 3. Instalar las dependencias y ejecutar frontend
+Para instalar las dependencias del frontend, navega a la carpeta front:
+  -  cd front
+En caso de encontrarte en la carpeta back puede ejecutar:
+  -  cd ../front
+Luego ejecuta:
+  - npm install
+Recuerda instalar axios
+  - npm install axios 
+Para correr el frontend, ejecuta:
+  - npm run dev
+
