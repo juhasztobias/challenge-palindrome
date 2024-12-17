@@ -40,7 +40,7 @@ const HistoryList: React.FC<HistoryListProps> = ({ history }) => {
           {history.map((item, index) => (
             <li
               key={index}
-              className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500"
+              className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500 break-words"
             >
               <strong className="text-lg">{item.text}</strong> -{' '}
               <span className={item.isPalindrome ? 'text-green-500' : 'text-red-500'}>

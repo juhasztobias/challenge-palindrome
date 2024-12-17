@@ -4,11 +4,11 @@
  * y muestra el historial de verificaciones obtenidas del backend.
  */
 
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Input from '@/app/components/Input';
-import HistoryList from '@/app/components/HistoryList';
+import { useState, useEffect } from "react";
+import Input from "@/app/components/Input";
+import HistoryList from "@/app/components/HistoryList";
 
 type Result = {
   text: string;
@@ -22,11 +22,11 @@ const Home = () => {
   // Cargar historial desde el backend
   const fetchHistory = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/history');
+      const res = await fetch("http://localhost:8000/api/history");
       if (res.ok) setHistory(await res.json());
-      else console.error('Error al obtener el historial');
+      else console.error("Error al obtener el historial");
     } catch (err) {
-      console.error('Error al cargar el historial:', err);
+      console.error("Error al cargar el historial:", err);
     }
   };
 
@@ -52,30 +52,27 @@ const Home = () => {
 
       {/* Muestra el resultado actual si existe */}
       {result && (
-        <div className="mt-4 p-4 bg-blue-50 rounded-lg shadow-md border border-gray-300">
+        <div className="w-full mt-4 p-4 text-center bg-blue-50 rounded-lg shadow-md border border-gray-300">
           <h3 className="text-2xl font-semibold mb-2">Resultado</h3>
-          <p className="text-lg">
-            <span className="font-bold text-gray-700">{result.text}</span> -{' '}
+          <p className="text-lg break-words">
+            <span className="font-bold text-gray-700">{result.text}</span> -{" "}
             <span
               className={`${
-                result.isPalindrome ? 'text-green-500' : 'text-red-500'
+                result.isPalindrome ? "text-green-500" : "text-red-500"
               } font-medium`}
             >
-              {result.isPalindrome ? 'Es un palíndromo' : 'No es un palíndromo'}
+              {result.isPalindrome ? "Es un palíndromo" : "No es un palíndromo"}
             </span>
           </p>
         </div>
       )}
 
       {/* Componente del historial */}
-      <HistoryList history={history} />
+      <div className="w-full">
+        <HistoryList history={history} />
+      </div>
     </div>
   );
 };
 
 export default Home;
-
-
-
-
-
