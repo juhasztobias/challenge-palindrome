@@ -1,8 +1,14 @@
+/**
+ * Home Component
+ * Página principal que permite ingresar una frase, verificar si es un palíndromo,
+ * y muestra el historial de verificaciones obtenidas del backend.
+ */
+
 'use client';
 
 import { useState, useEffect } from 'react';
-import Input from './components/Input';
-import HistoryList from './components/HistoryList';
+import Input from '@/app/components/Input';
+import HistoryList from '@/app/components/HistoryList';
 
 type Result = {
   text: string;
@@ -13,40 +19,41 @@ const Home = () => {
   const [result, setResult] = useState<Result | null>(null);
   const [history, setHistory] = useState([]);
 
-  // Función para cargar el historial desde el backend
+  // Cargar historial desde el backend
   const fetchHistory = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/history');
-      if (response.ok) {
-        const data = await response.json();
-        setHistory(data); // Actualiza el historial con los datos obtenidos
-      } else {
-        console.error('Error al obtener el historial');
-      }
-    } catch (error) {
-      console.error('Error al cargar el historial:', error);
+      const res = await fetch('http://localhost:8000/api/history');
+      if (res.ok) setHistory(await res.json());
+      else console.error('Error al obtener el historial');
+    } catch (err) {
+      console.error('Error al cargar el historial:', err);
     }
   };
 
-  // Llamar a fetchHistory cuando el componente se monta
+  // Llama a fetchHistory una sola vez al montar el componente
   useEffect(() => {
     fetchHistory();
-  }, []); // Solo lo hace al montar el componente
+  }, []);
 
-  // Función que se ejecuta al enviar un nuevo texto a verificar
+  // Maneja el resultado del input y actualiza el historial
   const handleResultSubmit = (data: Result | null) => {
-    setResult(data); // Establecer el resultado de la verificación
-    fetchHistory();   // Actualiza el historial después de verificar
+    setResult(data);
+    fetchHistory();
   };
 
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-semibold text-center text-blue-600 mb-6">Verificador de Palíndromos</h1>
+    <div className="max-w-4xl mx-auto p-4 bg-gray-50 rounded-lg shadow-lg mt-6 flex flex-col justify-center items-center">
+      <h1 className="text-3xl font-semibold text-center text-blue-600 mb-6">
+        Verificador de Palíndromos
+      </h1>
+
+      {/* Componente de entrada */}
       <Input onSubmit={handleResultSubmit} />
 
+      {/* Muestra el resultado actual si existe */}
       {result && (
-        <div className="mt-6 p-6 bg-white rounded-lg shadow-md border border-gray-300">
-          <h3 className="text-2xl font-semibold mb-4">Resultado</h3>
+        <div className="mt-4 p-4 bg-blue-50 rounded-lg shadow-md border border-gray-300">
+          <h3 className="text-2xl font-semibold mb-2">Resultado</h3>
           <p className="text-lg">
             <span className="font-bold text-gray-700">{result.text}</span> -{' '}
             <span
@@ -60,12 +67,15 @@ const Home = () => {
         </div>
       )}
 
+      {/* Componente del historial */}
       <HistoryList history={history} />
     </div>
   );
 };
 
 export default Home;
+
+
 
 
 

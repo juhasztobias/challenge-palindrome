@@ -1,3 +1,9 @@
+/**
+ * RootLayout Component
+ * Define la estructura principal de la página, incluyendo el encabezado, el contenido principal y el pie de página.
+ * Se encarga de aplicar el estilo global y de renderizar el contenido hijo (children) en el layout.
+ */
+
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -8,17 +14,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={"bg-gray-50 text-gray-900"}
-      >
+      <body className="bg-gray-50 text-gray-900">
         <header className="bg-blue-500 p-4 shadow-md">
           <h1 className="text-2xl text-white font-bold text-center">
-            Challenge: Verificador de Palíndromos
+          Challenge Palindrome Checker
           </h1>
         </header>
 
@@ -35,5 +37,6 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 
