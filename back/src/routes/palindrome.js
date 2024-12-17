@@ -1,4 +1,3 @@
-// src/routes/palindrome.js
 import { Router } from 'express';
 import { checkPalindrome, getHistory } from '../controllers/palindromeController.js';
 
