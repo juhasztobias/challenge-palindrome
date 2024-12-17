@@ -1,6 +1,6 @@
 // Esta función recibe un string que puede contener acentos, letras en mayusculas
 // Y devuelve un nuevo string, sin acentos, en mayúsculas y sin espacio
-export const sanitizeWord = (str)  => replaceBlankSpace(replaceAccents(str));
+export const sanitizeWord = (str)  => replaceBlankSpace(replaceAccents(str)).toUpperCase();
 
 const mapAccent = {
     'á': 'a', 
