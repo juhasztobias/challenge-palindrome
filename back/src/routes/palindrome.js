@@ -1,3 +1,7 @@
+/**
+ * Este archivo define las rutas para verificar si lo recibido es un palíndromo 
+ * y obtener el historial de entradas verificadas.
+ * */
 import { Router } from 'express';
 import { checkPalindrome, getHistory } from '../controllers/palindromeController.js';
 

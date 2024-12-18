@@ -1,3 +1,6 @@
+/**
+ * Configuración de entorno y asignación de puerto.
+ */
 import dotenv from 'dotenv';
 dotenv.config();
 
