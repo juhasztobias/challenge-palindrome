@@ -20,5 +20,7 @@ Para correr el frontend, ejecuta:
 
 ### Tecnologías utilizadas
 *Next.js*: Para desarrollo frontend.
+
 *Axios*: Para la comunicación con el backend.
+
 *Tailwind CSS*: Para estilos rápidos y diseño responsivo.
