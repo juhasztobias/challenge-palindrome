@@ -65,5 +65,4 @@ Recuerda instalar axios
 Para correr el frontend, ejecuta:
   - npm run dev
 
-<<<<<<< HEAD
-### ¡Exitos en la aplicacion!
+### ¡Exitos en la prueba del challenge!
