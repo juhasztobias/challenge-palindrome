@@ -16,6 +16,7 @@ type Result = {
 };
 
 const Home = () => {
+  
   const [result, setResult] = useState<Result | null>(null);
   const [history, setHistory] = useState([]);
 
