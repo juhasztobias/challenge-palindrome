@@ -3,7 +3,7 @@
  * y obtener el historial de entradas verificadas.
  * */
 import { Router } from 'express';
-import { checkPalindrome, getHistory } from '../controllers/palindromeController.js';
+import {checkPalindrome, getHistory, deleteHistory, deleteHistoryItem} from '../controllers/palindromeController.js';
 
 const router = Router();
 
@@ -12,5 +12,11 @@ router.post('/palindrome', checkPalindrome);
 
 // Ruta para obtener el historial
 router.get('/history', getHistory);
+
+// Ruta para eliminar el historial
+router.delete('/history', deleteHistory);
+
+// Ruta para eliminar un item del historial
+router.delete('/history/:text', deleteHistoryItem);
 
 export default router;

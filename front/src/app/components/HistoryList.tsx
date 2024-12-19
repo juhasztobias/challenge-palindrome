@@ -15,9 +15,10 @@ interface HistoryItem {
 
 interface HistoryListProps {
   history: HistoryItem[];
+  onDelete: (text: string) => void;
 }
 
-const HistoryList: React.FC<HistoryListProps> = ({ history }) => {
+const HistoryList: React.FC<HistoryListProps> = ({ history, onDelete }) => {
   const [loading, setLoading] = useState(true); // Controla el estado de carga
 
   useEffect(() => {
@@ -48,6 +49,12 @@ const HistoryList: React.FC<HistoryListProps> = ({ history }) => {
               <span className={item.isPalindrome ? 'text-green-500' : 'text-red-500'}>
                 {item.isPalindrome ? 'Es un palíndromo' : 'No es un palíndromo'}
               </span>
+              <button
+                onClick={() => onDelete(item.text)}
+                className="ml-4 bg-red-500 hover:bg-red-700 text-white p-1 rounded-md"
+              >
+                Eliminar
+              </button>
             </li>
           ))}
         </ul>

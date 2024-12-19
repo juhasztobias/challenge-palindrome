@@ -15,10 +15,15 @@ type Result = {
   isPalindrome: boolean;
 };
 
+type HistoryItem = {
+  text: string;
+  isPalindrome: boolean;
+}
+
 const Home = () => {
   
   const [result, setResult] = useState<Result | null>(null);
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState<HistoryItem[]>([]);
 
   // Cargar historial desde el backend
   const fetchHistory = async () => {
@@ -41,6 +46,39 @@ const Home = () => {
     setResult(data);
     fetchHistory();
   };
+
+  const handleDeleteAll = () => {
+    fetch("http://localhost:8000/api/history", {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (res.ok) {
+          setHistory([]); // Limpiar el historial en el frontend
+          alert("Historial eliminado con éxito");
+        } else {
+          return res.json().then((data) => alert(`Error: ${data.message}`));
+        }
+      })
+      .catch((err) => alert("Error al eliminar el historial: " + err));
+  };
+
+    const handleDeleteItem = async (text: string) => {
+      try {
+        const res = await fetch(`http://localhost:8000/api/history/${text}`, {
+          method: "DELETE",
+        });
+        if (res.ok) {
+          setHistory((prevHistory) =>
+            prevHistory.filter((item) => item.text !== text)
+          );
+          alert(`Ítem con el texto "${text}" eliminado con éxito`);
+        } else {
+          alert("Error al eliminar el ítem");
+        }
+      } catch (err) {
+        alert("Error al eliminar el ítem");
+      }
+    };
 
   return (
     <div className="max-w-4xl mx-auto p-4 bg-gray-50 rounded-lg shadow-lg mt-6 flex flex-col justify-center items-center">
@@ -67,10 +105,17 @@ const Home = () => {
           </p>
         </div>
       )}
+      {/* Botón para eliminar todo el historial */}
+      <button
+        onClick={handleDeleteAll}
+        className="bg-red-700 text-white p-2 rounded-lg mt-4 hover:bg-red-600"
+      >
+        Eliminar todo el historial
+      </button>
 
       {/* Componente del historial */}
       <div className="w-full">
-        <HistoryList history={history} />
+        <HistoryList history={history} onDelete={handleDeleteItem}  />
       </div>
     </div>
   );

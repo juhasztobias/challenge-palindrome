@@ -40,3 +40,23 @@ export const getHistory = (req, res) => {
   // Devuelve el historial de entradas
   res.json(history);
 }; 
+
+export const deleteHistory = (req, res) => {
+
+  history.length = 0;
+
+  res.status(200).json({ message: 'Historial eliminado con éxito' });
+};
+
+export const deleteHistoryItem = (req, res) => {
+  const { text } = req.params;
+
+  const index = history.findIndex(entry => entry.text === text); // Busca la posicion del item
+
+  history.splice(index, 1);// Elimina el ítem por su índice
+
+  res.status(200).json({ message: `Ítem con el texto ${text} eliminado con éxito` });
+};
+
+
+
