@@ -64,9 +64,9 @@ const Input: React.FC<InputProps> = ({ onSubmit }) => {
 
       // Limpia el campo de input después de enviar
       setInput('');
-    } catch (err: any) {
-      // Maneja cualquier error durante la solicitud
-      setError(err.message);
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
+      setError(errorMessage);
     }
   };
 
