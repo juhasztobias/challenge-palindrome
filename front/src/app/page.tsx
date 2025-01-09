@@ -54,7 +54,7 @@ const Home = () => {
       });
       if (res.ok) {
         setHistory([]);
-        alert("Historial eliminado con éxito");
+        alert("Historial eliminado con éxito!");
       } else {
         const data = await res.json();
         alert(`Error: ${data.message}`);
