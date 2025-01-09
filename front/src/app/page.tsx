@@ -35,7 +35,7 @@ const Home = () => {
       }
     } catch (err) {
       console.error("Error al cargar el historial:", err);
-    }
+  }
   };
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const Home = () => {
         alert("Error al eliminar el ítem");
       }
     } catch (err) {
-      alert("Error al eliminar el ítem");
+      console.error("Error al eliminar el ítem; ", err);
     }
   };
 
